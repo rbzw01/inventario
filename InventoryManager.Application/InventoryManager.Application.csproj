@@ -1,0 +1,86 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Contracts\" />
+    <None Remove="DTOs\" />
+    <None Remove="Exceptions\" />
+    <None Remove="Features\" />
+    <None Remove="Profiles\" />
+    <None Remove="Response\" />
+    <None Remove="AutoMapper.Extensions.Microsoft.DependencyInjection" />
+    <None Remove="MediatR.Extensions.Microsoft.DependencyInjection" />
+    <None Remove="FluentValidation.DependencyInjectionExtensions" />
+    <None Remove="DTOs\Common\" />
+    <None Remove="DTOs\Entity1\" />
+    <None Remove="DTOs\Entity1\Validators\" />
+    <None Remove="Features\Entity1\" />
+    <None Remove="Features\Entity1\Requests\" />
+    <None Remove="Features\Entity1\Requests %28another copy%29\" />
+    <None Remove="Features\Entity1\Handlers\Requests %28copy%29\" />
+    <None Remove="Features\Entity1\Handlers\Requests\" />
+    <None Remove="Features\Entity1\Requests\Commands\" />
+    <None Remove="Features\Entity1\Requests\Queries\" />
+    <None Remove="Features\Users\" />
+    <None Remove="Features\Users\Handlers\" />
+    <None Remove="Features\Users\Requests\" />
+    <None Remove="DTOs\Users\" />
+    <None Remove="DTOs\Items\" />
+    <None Remove="DTOs\Items\Validators\" />
+    <None Remove="Contracts\Persistence\" />
+    <None Remove="Contracts\Infrastructure\" />
+    <None Remove="Features\ItemEvents\" />
+    <None Remove="Features\ItemEvents\Requests\" />
+    <None Remove="Features\ItemEvents\Handlers\" />
+    <None Remove="Features\ItemEvents\Requests\Commands\" />
+    <None Remove="Features\ItemEvents\Handlers\Commands\" />
+    <None Remove="Features\ItemEvents\Handlers\Queries\" />
+    <None Remove="Features\ItemEvents\Requests\Queries\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Contracts\" />
+    <Folder Include="DTOs\" />
+    <Folder Include="Exceptions\" />
+    <Folder Include="Features\" />
+    <Folder Include="Profiles\" />
+    <Folder Include="Response\" />
+    <Folder Include="DTOs\Common\" />
+    <Folder Include="DTOs\ItemEvents\" />
+    <Folder Include="DTOs\ItemEvents\Validators\" />
+    <Folder Include="Features\Items\" />
+    <Folder Include="Features\Items\Requests\" />
+    <Folder Include="Features\Items\Handlers\" />
+    <Folder Include="Features\Items\Handlers\Queries\" />
+    <Folder Include="Features\Items\Handlers\Commands\" />
+    <Folder Include="Features\Items\Requests\Commands\" />
+    <Folder Include="Features\Items\Requests\Queries\" />
+    <Folder Include="Features\Users\" />
+    <Folder Include="Features\Users\Handlers\" />
+    <Folder Include="Features\Users\Requests\" />
+    <Folder Include="DTOs\Users\" />
+    <Folder Include="DTOs\Items\" />
+    <Folder Include="DTOs\Items\Validators\" />
+    <Folder Include="Contracts\Persistence\" />
+    <Folder Include="Contracts\Infrastructure\" />
+    <Folder Include="Features\ItemEvents\" />
+    <Folder Include="Features\ItemEvents\Requests\" />
+    <Folder Include="Features\ItemEvents\Handlers\" />
+    <Folder Include="Features\ItemEvents\Requests\Commands\" />
+    <Folder Include="Features\ItemEvents\Handlers\Commands\" />
+    <Folder Include="Features\ItemEvents\Handlers\Queries\" />
+    <Folder Include="Features\ItemEvents\Requests\Queries\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InventoryManager.Domain\InventoryManager.Domain.csproj" />
+  </ItemGroup>
+</Project>
