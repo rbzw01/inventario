@@ -36,19 +36,19 @@
   - Infrastructure
     - para este último se crearon dos proyectos para separar la persistencia (InventoryManager.Persistence) de los demás servicios de infraestructura (InventoryManager.Infrastructure)
 
-- Se utiliza una base datos en memoria haciendo para lo cual se utilizó el paquete de NuGet <strong>"Microsoft.EntityFrameworkCore.InMemory"</strong>
+- Se utiliza una base datos en memoria para lo cual se utilizó el paquete de NuGet <strong>"Microsoft.EntityFrameworkCore.InMemory"</strong>
 
-- Para la parte de lanzar eventos como se está utilizando una base de datos en memoria se asume que estos serán un registro dentro de la base de datos. Sin embargo, se utiliza el patrón mediator para evita la dependencia con las entidades o funciones del dominio Item. De esta forma en caso de ser necesario se puede implementar un nuevo handler, que implemente el envío del evento a otra fuente de datos o servicios, para responder a la misma solicitud.
+- Para el requerimiento de lanzar eventos, como se está utilizando una base de datos en memoria se asume que estos serán un registro dentro de la base de datos. Sin embargo, se utiliza el patrón mediator para evitar la dependencia con las entidades o funciones del dominio Item. De esta forma en caso de ser necesario se puede implementar un nuevo handler, que implemente el envío del evento a otra fuente de datos o servicios, para responder a la misma solicitud.
 
 ### Patrones y principios
 
 - SOLID
         
-    se utilizaron los principios básicos SOLID en toda las capas y clases creadas, buscando que sea más fácil de entender y de darle mantenimiento.
+    Se utilizaron los principios básicos SOLID en todas las capas y clases creadas, para mejor comprensión y facilitar el mantenimiento.
 
 - CQRS
 
-    El uso de este patrón le aporta flexibilidad y escalabilidad al sistema, manteniendo una separación entre los comandos y las queries
+    El uso de este patrón aporta flexibilidad y escalabilidad al sistema, manteniendo una separación entre los comandos y las queries
     - Por cada entidad de dominio se creó una estructura común:
       - Requests
         - Queries
@@ -59,47 +59,46 @@
 
 - Mediator
 
-    Este patrón nos aporta independencia entre los componentes al utilizar un mediador para ejecutar solicitudes en lugar de crear dependencias directas entre los componentes. Se utilizó el paquete de NuGet <strong>"MediatR.Extensions.Microsoft.DependencyInjection"</strong>
+    Este patrón aporta independencia entre los componentes al utilizar un mediador para ejecutar solicitudes en lugar de crear dependencias directas entre los componentes. Se utilizó el paquete de NuGet <strong>"MediatR.Extensions.Microsoft.DependencyInjection"</strong>
 
 - Repository
   
-    Nos permite encapsular los comportamientos y funciones relacionadas con el acceso a datos. Además, al vincularlo con el principio de segregación de interfaces y la inversión de dependencia, nos permite abstraer las dependencias de la implementación.
+    Permite encapsular los comportamientos y funciones relacionadas con el acceso a datos. Además, al vincularlo con el principio de segregación de interfaces y la inversión de dependencia, permite abstraer las dependencias de la implementación.
 
 - MVC
 
-    Se utiliza el patrón MVC para lograr la separación de intereses en la exposición de la API. Al mismo tiempo utilizamos los DTO para lograr que para cada funcionalidad se solicite y se expongan solo los datos necesarios
+    Se utiliza el patrón MVC para lograr la separación de intereses en la exposición de la API. Al mismo tiempo se utilizan los DTO para lograr que para cada funcionalidad se solicite y se expongan sólo los datos necesarios
 
 ## Paquetes NuGet
 
-Se utilizan los siguientes paquetes de NuGet
 - Microsoft.EntityFrameworkCore.SqlServer
       
     Utilizado para el acceso a la información en la fuente de datos.
 
 - Microsoft.EntityFrameworkCore.InMemory
 
-    Es utilizada para abstraer la capa de persistencia a una base de datos en memoria
+    Es utilizada para abstraer la capa de persistencia a una base de datos en memoria.
 
 - Microsoft.Extensions.Logging.Abstractions
 
-    Paquete de abstracción para el uso de ILogger. Fue utilizado en el servicio <strong>ProcessingItemExpiredHostedService</strong> para visualizar su correcto funcionamiento a través de la consola
+    Paquete de abstracción para el uso de ILogger. Fue utilizado en el servicio <strong>ProcessingItemExpiredHostedService</strong> para visualizar su correcto funcionamiento a través de la consola.
 
 - AutoMapper.Extensions.Microsoft.DependencyInjection
 
-    Nos posibilita el mapeo entre dos objetos, muy utilizados en la transformación de la información de objetos de dominio a DTOs.
+    Posibilita el mapeo entre dos objetos, muy empleado en la transformación de la información de objetos de dominio a DTOs.
 
 - MediatR.Extensions.Microsoft.DependencyInjection
 
-    Es utilizada para aplicar el patrón de diseño Mediator junto a la inyección de dependencia de .NET 6
+    Es utilizada para aplicar el patrón de diseño Mediator junto a la inyección de dependencia de .NET 6.
 
 - FluentValidation.DependencyInjectionExtensions
 
-    Es utilizada para crear las reglas de validación de datos para los objetos DTO utilizados para recibir información. Brinda una forma cómoda de validar las propiedades de los objetos
+    Es utilizada para crear las reglas de validación de datos para los objetos DTO, empleados para recibir información. Brinda una forma cómoda de validar las propiedades de los objetos.
 
 - Moq
 
-    Utilizado en las pruebas unitarias para la creación de objetos mocks
+    Utilizado en las pruebas unitarias para la creación de objetos mocks.
 
 - Shouldly
 
-    Una librería que facilita la creación de los Asserts en las pruebas unitarias.
+    Librería que facilita la creación de los Asserts en las pruebas unitarias.
