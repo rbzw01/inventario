@@ -10,7 +10,6 @@
   - [Breve descripción y elementos asumidos](#breve-descripción-y-elementos-asumidos)
     - [Patrones y principios](#patrones-y-principios)
   - [Paquetes NuGet](#paquetes-nuget)
-  - [Ends](#ends)
 
 ## Instruciones para correr la aplicación
 
@@ -38,6 +37,8 @@
     - para este último se crearon dos proyecto  permitiendo separar la persistencia (InventoryManager.Persistence) de los demás servicios de infraestructura (InventoryManager.Infrastructure)
 
 - Se utiliza una basedatos en memoria haciendo para lo cual se utilizó el paquete de NuGet <strong>Microsoft.EntityFrameworkCore.InMemory</strong>
+
+- Para la parte de lanzar eventos como se está utilizando una base de datos en memoria se asume que estos serán un registro dentro de la base de datos. Sin embargo, se utiliza el patrón mediator para evita la dependenia con las entidad de o funciones del dominio Item. De esta forma en caso de ser necesario se puede implementar un nuevo handler, que implemente el envío del evento a otra fuente de datos o servicios, para responder a la misma solicitud.
 
 ### Patrones y principios
 
@@ -104,8 +105,3 @@ Se utilizan los siguientes paquetes de NuGet
 - Shouldly
 
     Una librería que facilita la creación de los Asserts en las pruebas unitarias.
-
-
-
-
-## Ends
