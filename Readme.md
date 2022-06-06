@@ -1,17 +1,17 @@
 ﻿# Ejercicio técnico de administración de inventario
 
-## Indice
+## Índice
 
 - [Ejercicio técnico de administración de inventario](#ejercicio-técnico-de-administración-de-inventario)
-  - [Indice](#indice)
-  - [Instruciones para correr la aplicación](#instruciones-para-correr-la-aplicación)
+  - [Índice](#índice)
+  - [Instrucciones para correr la aplicación](#instrucciones-para-correr-la-aplicación)
     - [Requisitos](#requisitos)
     - [Ejecutar la aplicación](#ejecutar-la-aplicación)
   - [Breve descripción y elementos asumidos](#breve-descripción-y-elementos-asumidos)
     - [Patrones y principios](#patrones-y-principios)
   - [Paquetes NuGet](#paquetes-nuget)
 
-## Instruciones para correr la aplicación
+## Instrucciones para correr la aplicación
 
 ### Requisitos
 - Para ejecutar la aplicación es necesario .NET 6
@@ -19,8 +19,8 @@
 ### Ejecutar la aplicación
 
 - La aplicación puede ser ejecutada desde un VS o por un terminal
-- Tiene integrada una autenticación báscia pero solo en los controladores WheatherController e ItemEventController, para permitir el testeo de ItemController sin necesidad de autenticarse
-  - Para auntenticarse se crean dos usuarios estáticos
+- Tiene integrada una autenticación básica pero solo en los controladores WheatherController e ItemEventController, para permitir el testeo de ItemController sin necesidad de autenticarse
+  - Para autenticarse se crean dos usuarios estáticos
     - Usuario 1
       - user: user1
       - password: password1
@@ -34,11 +34,11 @@
   - Application (InventoryManager.Application)
   - Domain (InventoryManager.Domain)
   - Infrastructure
-    - para este último se crearon dos proyecto  permitiendo separar la persistencia (InventoryManager.Persistence) de los demás servicios de infraestructura (InventoryManager.Infrastructure)
+    - para este último se crearon dos proyectos para separar la persistencia (InventoryManager.Persistence) de los demás servicios de infraestructura (InventoryManager.Infrastructure)
 
-- Se utiliza una basedatos en memoria haciendo para lo cual se utilizó el paquete de NuGet <strong>"Microsoft.EntityFrameworkCore.InMemory"</strong>
+- Se utiliza una base datos en memoria haciendo para lo cual se utilizó el paquete de NuGet <strong>"Microsoft.EntityFrameworkCore.InMemory"</strong>
 
-- Para la parte de lanzar eventos como se está utilizando una base de datos en memoria se asume que estos serán un registro dentro de la base de datos. Sin embargo, se utiliza el patrón mediator para evita la dependenia con las entidad de o funciones del dominio Item. De esta forma en caso de ser necesario se puede implementar un nuevo handler, que implemente el envío del evento a otra fuente de datos o servicios, para responder a la misma solicitud.
+- Para la parte de lanzar eventos como se está utilizando una base de datos en memoria se asume que estos serán un registro dentro de la base de datos. Sin embargo, se utiliza el patrón mediator para evita la dependencia con las entidades o funciones del dominio Item. De esta forma en caso de ser necesario se puede implementar un nuevo handler, que implemente el envío del evento a otra fuente de datos o servicios, para responder a la misma solicitud.
 
 ### Patrones y principios
 
@@ -63,11 +63,11 @@
 
 - Repository
   
-    Nos permite encapsular los comportamientos y funciones relacionadas con el acceso a datos. Al vinclarlo con el principio de segregación de interzas y la inversión de dependencia, nos permite abstraer las dependencias de la implementeción.
+    Nos permite encapsular los comportamientos y funciones relacionadas con el acceso a datos. Además, al vincularlo con el principio de segregación de interfaces y la inversión de dependencia, nos permite abstraer las dependencias de la implementación.
 
 - MVC
 
-    Se utiliza el patrón MVC para lograr la separación de intereses en la expocisión de la API. Al mismo tiempo utilizamos los DTO para lograr que para cada funcionalidad se solicite y se expongan solo los datos necesarios
+    Se utiliza el patrón MVC para lograr la separación de intereses en la exposición de la API. Al mismo tiempo utilizamos los DTO para lograr que para cada funcionalidad se solicite y se expongan solo los datos necesarios
 
 ## Paquetes NuGet
 
@@ -82,7 +82,7 @@ Se utilizan los siguientes paquetes de NuGet
 
 - Microsoft.Extensions.Logging.Abstractions
 
-    Paquete de abstracción para el uso de ILogger. Fue utilizado en el servicio ProcessingItemExpiredHostedService para visualizar su correcto funcionamiento a través de la consola
+    Paquete de abstracción para el uso de ILogger. Fue utilizado en el servicio <strong>ProcessingItemExpiredHostedService</strong> para visualizar su correcto funcionamiento a través de la consola
 
 - AutoMapper.Extensions.Microsoft.DependencyInjection
 
@@ -90,7 +90,7 @@ Se utilizan los siguientes paquetes de NuGet
 
 - MediatR.Extensions.Microsoft.DependencyInjection
 
-    Es utilizada para aplicar el patron de diseño Mediator junto a la inyección de dependencia de .NET 6
+    Es utilizada para aplicar el patrón de diseño Mediator junto a la inyección de dependencia de .NET 6
 
 - FluentValidation.DependencyInjectionExtensions
 
@@ -98,7 +98,7 @@ Se utilizan los siguientes paquetes de NuGet
 
 - Moq
 
-    Utiliado en las pruebas unitarias para la creación de objetos mocks
+    Utilizado en las pruebas unitarias para la creación de objetos mocks
 
 - Shouldly
 
