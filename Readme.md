@@ -36,7 +36,7 @@
   - Infrastructure
     - para este último se crearon dos proyecto  permitiendo separar la persistencia (InventoryManager.Persistence) de los demás servicios de infraestructura (InventoryManager.Infrastructure)
 
-- Se utiliza una basedatos en memoria haciendo para lo cual se utilizó el paquete de NuGet "Microsoft.EntityFrameworkCore.InMemory"
+- Se utiliza una basedatos en memoria haciendo para lo cual se utilizó el paquete de NuGet <strong>"Microsoft.EntityFrameworkCore.InMemory"</strong>
 
 - Para la parte de lanzar eventos como se está utilizando una base de datos en memoria se asume que estos serán un registro dentro de la base de datos. Sin embargo, se utiliza el patrón mediator para evita la dependenia con las entidad de o funciones del dominio Item. De esta forma en caso de ser necesario se puede implementar un nuevo handler, que implemente el envío del evento a otra fuente de datos o servicios, para responder a la misma solicitud.
 
@@ -59,7 +59,7 @@
 
 - Mediator
 
-    Este patrón nos aporta independencia entre los componentes al utilizar un mediador para ejecutar solicitudes en lugar de crear dependencias directas entre los componentes. Se utilizó el paquete de NuGet "MediatR.Extensions.Microsoft.DependencyInjection"
+    Este patrón nos aporta independencia entre los componentes al utilizar un mediador para ejecutar solicitudes en lugar de crear dependencias directas entre los componentes. Se utilizó el paquete de NuGet <strong>"MediatR.Extensions.Microsoft.DependencyInjection"</strong>
 
 - Repository
   
@@ -68,8 +68,6 @@
 - MVC
 
     Se utiliza el patrón MVC para lograr la separación de intereses en la expocisión de la API. Al mismo tiempo utilizamos los DTO para lograr que para cada funcionalidad se solicite y se expongan solo los datos necesarios
-
-- 
 
 ## Paquetes NuGet
 
