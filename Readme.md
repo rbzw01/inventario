@@ -19,7 +19,7 @@
 ### Ejecutar la aplicación
 
 - La aplicación puede ser ejecutada desde un VS o por un terminal
-- Tiene integrada una autenticación básica pero solo en los controladores WheatherController e ItemEventController, para permitir el testeo de ItemController sin necesidad de autenticarse
+- Tiene integrada una autenticación básica pero solo en el controlador ItemEventController, para permitir el testeo de ItemController sin necesidad de autenticarse
   - Para autenticarse se crean dos usuarios estáticos
     - Usuario 1
       - user: user1
